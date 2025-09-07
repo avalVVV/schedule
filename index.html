@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание БТ-11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Расписание группы БТ-11</h1>
+            <h2 class="header__subtitle">Осенний семестр 2025-2026</h2>
+        </header>
+
+        <!-- Today/Tomorrow compact block - все даты будут заполняться JavaScript -->
+        <div class="today-tomorrow-block">
+            <h3 class="today-tomorrow-title">Сегодня и завтра</h3>
+            <div class="current-week-info">
+                <span class="week-indicator" id="current-week-indicator"></span>
+            </div>
+            <div class="today-tomorrow-content">
+                <div class="day-compact today-compact">
+                    <h4 id="today-title"></h4>
+                    <div id="today-subjects" class="today-subjects"></div>
+                </div>
+                <div class="day-compact tomorrow-compact">
+                    <h4 id="tomorrow-title"></h4>
+                    <div id="tomorrow-subjects" class="tomorrow-subjects"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full schedule with week switcher -->
+        <div class="full-schedule-section">
+            <div class="week-switcher">
+                <button class="week-btn" data-week="odd">Верхняя неделя</button>
+                <button class="week-btn" data-week="even">Нижняя неделя</button>
+            </div>
+
+            <div class="schedule-grid">
+                <div class="day-card" data-day="monday">
+                    <div class="day-header">
+                        <h2>Понедельник</h2>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time-slot" data-time="8:00">
+                            <div class="time">8:00</div>
+                            <div class="subjects" data-day="Понедельник" data-time="8:00"></div>
+                        </div>
+                        <div class="time-slot" data-time="9:40">
+                            <div class="time">9:40</div>
+                            <div class="subjects" data-day="Понедельник" data-time="9:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="11:40">
+                            <div class="time">11:40</div>
+                            <div class="subjects" data-day="Понедельник" data-time="11:40"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="tuesday">
+                    <div class="day-header">
+                        <h2>Вторник</h2>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time-slot" data-time="9:40">
+                            <div class="time">9:40</div>
+                            <div class="subjects" data-day="Вторник" data-time="9:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="11:40">
+                            <div class="time">11:40</div>
+                            <div class="subjects" data-day="Вторник" data-time="11:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="13:20">
+                            <div class="time">13:20</div>
+                            <div class="subjects" data-day="Вторник" data-time="13:20"></div>
+                        </div>
+                        <div class="time-slot" data-time="15:00">
+                            <div class="time">15:00</div>
+                            <div class="subjects" data-day="Вторник" data-time="15:00"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="wednesday">
+                    <div class="day-header">
+                        <h2>Среда</h2>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time-slot" data-time="8:00">
+                            <div class="time">8:00</div>
+                            <div class="subjects" data-day="Среда" data-time="8:00"></div>
+                        </div>
+                        <div class="time-slot" data-time="9:40">
+                            <div class="time">9:40</div>
+                            <div class="subjects" data-day="Среда" data-time="9:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="11:40">
+                            <div class="time">11:40</div>
+                            <div class="subjects" data-day="Среда" data-time="11:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="13:20">
+                            <div class="time">13:20</div>
+                            <div class="subjects" data-day="Среда" data-time="13:20"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="friday">
+                    <div class="day-header">
+                        <h2>Пятница</h2>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time-slot" data-time="8:00">
+                            <div class="time">8:00</div>
+                            <div class="subjects" data-day="Пятница" data-time="8:00"></div>
+                        </div>
+                        <div class="time-slot" data-time="9:40">
+                            <div class="time">9:40</div>
+                            <div class="subjects" data-day="Пятница" data-time="9:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="11:40">
+                            <div class="time">11:40</div>
+                            <div class="subjects" data-day="Пятница" data-time="11:40"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-card" data-day="saturday">
+                    <div class="day-header">
+                        <h2>Суббота</h2>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time-slot" data-time="8:20">
+                            <div class="time">8:20</div>
+                            <div class="subjects" data-day="Суббота" data-time="8:20"></div>
+                        </div>
+                        <div class="time-slot" data-time="10:00">
+                            <div class="time">10:00</div>
+                            <div class="subjects" data-day="Суббота" data-time="10:00"></div>
+                        </div>
+                        <div class="time-slot" data-time="11:40">
+                            <div class="time">11:40</div>
+                            <div class="subjects" data-day="Суббота" data-time="11:40"></div>
+                        </div>
+                        <div class="time-slot" data-time="13:20">
+                            <div class="time">13:20</div>
+                            <div class="subjects" data-day="Суббота" data-time="13:20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
